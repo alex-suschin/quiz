@@ -1,7 +1,4 @@
 $(function() {
-
-
-
     setTimeout(function() {
         $("header").addClass("header-show");
         $("h1").addClass("h1-show");
@@ -31,7 +28,6 @@ $(function() {
 
     $('.message-box div[data-delay-text]').each(function() {
         var delayVal = $(this).attr('data-delay-text');
-        // console.log(delayVal);
 
         setTimeout(() => {
             if ($('.text-print').length == 0) {
@@ -60,106 +56,129 @@ $(function() {
     }, 5200);
 
 
-    $('.car-item').click(function() {
-        // var newmessBlockH = $('.message-box').outerHeight();
-        // var messCarH = $('.js-message--check-car').outerHeight();
-        // $(".message-box").css('height', newmessBlockH + messCarH);
-
-        flag = false;
-        $('.js-money-check').removeClass('vis');
-        $('.js-money-check').removeClass('visF');
-        $('.js-final-message').removeClass('vis');
-        $('.js-final-message').removeClass('visF');
-        $('.js-message--check-money').removeClass('vis');
-        $('.js-message--check-money').removeClass('visF');
-        $('.btns label').removeClass('active');
-        var valueCar = $(this).children('input:checked').val();
-        $('.js-message--check-car').addClass('vis');
-        $('.js-message--check-car .message-text').text(valueCar);
+    // $('.car-item').click(function() {
+    //     flag = false;
+    //     $('.btns label').removeClass('active');
+    //     var valueCar = $(this).children('input:checked').val();
+    //     $('.js-message--check-car').addClass('vis');
+    //     $('.js-message--check-car .message-text').text(valueCar);
 
 
-        setTimeout(() => {
-            $('.js-message--check-car').addClass('visF');
-        }, 100);
+    //     setTimeout(() => {
+    //         $('.js-message--check-car').addClass('visF');
+    //     }, 100);
 
-        setTimeout(() => {
-            $('html,body').animate({ scrollTop: $('.js-message--check-car').offset().top + "px" }, { duration: 1E3 });
-        }, 150);
+    //     setTimeout(() => {
+    //         $('html,body').animate({ scrollTop: $('.js-message--check-car').offset().top + "px" }, { duration: 1E3 });
+    //     }, 150);
+
+
+    //     setTimeout(() => {
+    //         if ($('.text-print').length == 0) {
+    //             $('.js-message--check-car').after('<div class="text-print text-car-check">Виктор печатает ...</div>');
+    //         }
+    //     }, 200);
+
+    //     setTimeout(() => {
+    //         $('.js-money-check').addClass('visF');
+    //     }, 300);
+
+    //     setTimeout(() => {
+    //         $('.js-money-check').addClass('vis');
+    //         $('.text-car-check').remove();
+    //     }, 1200);
+
+
+    // });
+
+    $('.btns').each(function() {
+        $(this).children('label').click(function() {
+            $(this).parents('.btns').addClass('btns-checked');
+            $(this).closest('.message-item').children('.back-step').addClass('back-step-dis');
+            var elemThis = $(this).closest('.message-item-m');
+            var idVal = $(this).closest('.message-item-m').attr('id');
+            // console.log(idVal);
+            $('.js-final-message').removeClass('vis');
+            $('.js-final-message').removeClass('visF');
+            $(this).siblings('label').removeClass('active');
+            $(this).addClass('active');
+
+            var NextEl = $(this).closest('.messag-elem').next('.messag-elem').next('.messag-elem').length;
+
+            var valueMoney = $(this).children('input:checked').val();
+
+            $(this).closest('.messag-elem').next('.message-y').find('.message-text').text(valueMoney);
+
+
+            setTimeout(() => {
+                $(this).closest('.messag-elem').next('.message-y').addClass('visF');
+            }, 100);
 
 
 
-        setTimeout(() => {
-            if ($('.text-print').length == 0) {
-                $('.js-message--check-car').after('<div class="text-print text-car-check">Виктор печатает ...</div>');
+
+            setTimeout(() => {
+                $(this).closest('.messag-elem').next('.message-y').addClass('vis');
+            }, 200);
+
+            setTimeout(() => {
+                $('html,body').animate({ scrollTop: $(this).closest('.messag-elem').next('.message-y').offset().top + "px" }, { duration: 1E3 });
+            }, 400);
+
+            setTimeout(() => {
+                if ($('.text-print').length == 0 && NextEl != 0) {
+                    $(this).closest('.messag-elem').next('.message-y').after('<div class="text-print">Анастасия печатает ...</div>');
+                }
+            }, 600);
+
+            setTimeout(() => {
+                $(this).closest('.messag-elem').next('.message-y').next('.messag-elem').addClass('visF');
+                $('.text-print').remove();
+
+            }, 1500);
+
+
+
+            setTimeout(() => {
+                $(this).closest('.messag-elem').next('.message-y').next('.messag-elem').addClass('vis');
+
+            }, 1600);
+
+            // console.log(NextEl);
+            if (NextEl == 0) {
+                setTimeout(() => {
+                    if ($('.text-final').length == 0) {
+                        $('.js-final-message').before('<div class="text-print text-final">Анастасия печатает ...</div>');
+                    }
+                }, 400);
+
+                setTimeout(() => {
+                    $('.js-final-message').addClass('visF');
+                    $('.text-final').remove();
+                }, 1500);
+
+                setTimeout(() => {
+                    $('.js-final-message').addClass('vis');
+                }, 1600);
+
+
             }
-        }, 200);
-
-        setTimeout(() => {
-            $('.js-money-check').addClass('visF');
-        }, 300);
-
-        setTimeout(() => {
-            $('.js-money-check').addClass('vis');
-            $('.text-car-check').remove();
-        }, 1200);
 
 
+
+            // setTimeout(() => {
+            //     $('.js-final-message').addClass('visF');
+            // }, 1600);
+
+            // setTimeout(() => {
+            //     $('.js-final-message').addClass('vis');
+            //     $('.text-final').remove();
+            // }, 1700);
+
+
+
+        });
     });
-
-    $('.btns label').click(function() {
-
-        $('.js-final-message').removeClass('vis');
-        $('.js-final-message').removeClass('visF');
-        $('.btns label').removeClass('active');
-        $(this).addClass('active');
-
-        var valueMoney = $(this).children('input:checked').val();
-        $('.js-message--check-money').addClass('vis');
-        $('.js-message--check-money .message-text').text(valueMoney);
-
-
-
-        setTimeout(() => {
-            $('.js-message--check-money').addClass('visF');
-        }, 300);
-
-        setTimeout(() => {
-            $('html,body').animate({ scrollTop: $('.js-message--check-money').offset().top + "px" }, { duration: 1E3 });
-        }, 400);
-
-        setTimeout(() => {
-            if ($('.text-print').length == 0) {
-                $('.js-message--check-money').after('<div class="text-print text-money-check">Виктор печатает ...</div>');
-            }
-        }, 600);
-
-        setTimeout(() => {
-            $('.js-money-check').addClass('vis');
-            $('.text-money-check').remove();
-        }, 1600);
-
-        // setTimeout(() => {
-        //     if ($('.text-print').length == 0) {
-        //         $('.js-message--check-money').after('<div class="text-print text-final">Виктор печатает ...</div>');
-        //     }
-        // }, 1500);
-
-        setTimeout(() => {
-            $('.js-final-message').addClass('visF');
-        }, 1600);
-
-        setTimeout(() => {
-            $('.js-final-message').addClass('vis');
-            $('.text-final').remove();
-        }, 1700);
-
-
-
-    });
-
-
-
-
 });
 
 
@@ -170,11 +189,11 @@ $('.car-item').click(function() {
     $(this).addClass('active');
 });
 
-$('.btns a').click(function(e) {
-    e.preventDefault();
-    $('.btns a').removeClass('active');
-    $(this).addClass('active');
-});
+// $('.btns a').click(function(e) {
+//     e.preventDefault();
+//     $('.btns a').removeClass('active');
+//     $(this).addClass('active');
+// });
 
 $("body").on("keyup", ".inpphone", function() {
     if ($(this).val() != "") {
