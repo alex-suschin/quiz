@@ -31,18 +31,18 @@
   font-display: swap; }
 
 @font-face {
-  font-family: "VWText";
-  src: url("../fonts/VWText-Light.eot");
-  src: url("../fonts/VWText-Light.eot?#iefix") format("embedded-opentype"), url("../fonts/VWText-Light.woff2") format("woff2"), url("../fonts/VWText-Light.woff") format("woff");
-  font-weight: 300;
-  font-style: normal;
-  font-display: swap; }
-
-@font-face {
   font-family: "VWTextOffice";
   src: url("../fonts/VWTextOffice.eot");
   src: url("../fonts/VWTextOffice.eot?#iefix") format("embedded-opentype"), url("../fonts/VWTextOffice.woff2") format("woff2"), url("../fonts/VWTextOffice.woff") format("woff");
   font-weight: 400;
+  font-style: normal;
+  font-display: swap; }
+
+@font-face {
+  font-family: "VWText";
+  src: url("../fonts/VWText-Light.eot");
+  src: url("../fonts/VWText-Light.eot?#iefix") format("embedded-opentype"), url("../fonts/VWText-Light.woff2") format("woff2"), url("../fonts/VWText-Light.woff") format("woff");
+  font-weight: 300;
   font-style: normal;
   font-display: swap; }
 
