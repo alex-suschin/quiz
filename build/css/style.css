@@ -15,18 +15,18 @@
   font-display: swap; }
 
 @font-face {
-  font-family: "VWTextOffice";
-  src: url("../fonts/VWTextOffice-Bold.eot");
-  src: url("../fonts/VWTextOffice-Bold.eot?#iefix") format("embedded-opentype"), url("../fonts/VWTextOffice-Bold.woff2") format("woff2"), url("../fonts/VWTextOffice-Bold.woff") format("woff");
-  font-weight: 700;
-  font-style: normal;
-  font-display: swap; }
-
-@font-face {
   font-family: "VWHeadOffice";
   src: url("../fonts/VWHeadOffice-Regular.eot");
   src: url("../fonts/VWHeadOffice-Regular.eot?#iefix") format("embedded-opentype"), url("../fonts/VWHeadOffice-Regular.woff2") format("woff2"), url("../fonts/VWHeadOffice-Regular.woff") format("woff");
   font-weight: 400;
+  font-style: normal;
+  font-display: swap; }
+
+@font-face {
+  font-family: "VWTextOffice";
+  src: url("../fonts/VWTextOffice-Bold.eot");
+  src: url("../fonts/VWTextOffice-Bold.eot?#iefix") format("embedded-opentype"), url("../fonts/VWTextOffice-Bold.woff2") format("woff2"), url("../fonts/VWTextOffice-Bold.woff") format("woff");
+  font-weight: 700;
   font-style: normal;
   font-display: swap; }
 

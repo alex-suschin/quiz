@@ -127,7 +127,7 @@ $(function() {
 
             setTimeout(() => {
                 if ($('.text-print').length == 0 && NextEl != 0) {
-                    $(this).closest('.messag-elem').next('.message-y').after('<div class="text-print">Анастасия печатает ...</div>');
+                    $(this).closest('.messag-elem').next('.message-y').after('<div class="text-print">Виктор печатает ...</div>');
                 }
             }, 600);
 
@@ -148,7 +148,7 @@ $(function() {
             if (NextEl == 0) {
                 setTimeout(() => {
                     if ($('.text-final').length == 0) {
-                        $('.js-final-message').before('<div class="text-print text-final">Анастасия печатает ...</div>');
+                        $('.js-final-message').before('<div class="text-print text-final">Виктор печатает ...</div>');
                     }
                 }, 400);
 
