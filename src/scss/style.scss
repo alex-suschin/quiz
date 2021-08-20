@@ -444,6 +444,35 @@ header.header-show {
     &.active {
         border-color: #001E50;
     }
+    ul {
+        margin: 0;
+        padding: 0;
+        list-style: none;
+        li {
+            position: relative;
+            text-align: left;
+            font-size: 12px;
+            padding: 0 0 0 10px;
+            margin-bottom: 5px;
+            &:last-child {
+                margin-bottom: 0;
+            }
+            &::before {
+                content: '';
+                width: 5px;
+                height: 5px;
+                border-radius: 50%;
+                -webkit-border-radius: 50%;
+                -moz-border-radius: 50%;
+                -ms-border-radius: 50%;
+                -o-border-radius: 50%;
+                background: #001E50;
+                position: absolute;
+                top: 4px;
+                left: 0;
+            }
+        }
+    }
 }
 
 .cars .btns .car-item:nth-child(3n) {
@@ -635,10 +664,34 @@ header.header-show {
     width: 100%;
 }
 
-@media screen and (min-width:992px) {
-    .btn-orange:hover {
-        background: #ec4824;
-    }
+.footer-disclamer {
+    margin-top: 38px;
+    margin-bottom: 35px;
+}
+
+.footer .footer-disclamer .container-big {
+    display: block;
+    border-top: 1px solid #F1F1F1;
+    padding: 38px 16px 19px 16px;
+}
+
+.footer-disclamer P {
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 130%;
+    color: #747474;
+    margin-bottom: 32px;
+}
+
+summary {
+    display: block;
+    outline: none!important;
+    cursor: pointer;
+    margin: 10px 0;
+    padding: 15px;
+    background: #e6e6e6;
+    color: #828282;
+    font-size: 14px;
 }
 
 
@@ -730,6 +783,10 @@ header.header-show {
 }
 
 @media screen and (max-width: 500px) {
+    .footer-disclamer P {
+        font-size: 12px;
+        margin-bottom: 25px;
+    }
     .exs-item {
         width: 100%;
         text-align: left;

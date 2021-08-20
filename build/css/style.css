@@ -15,6 +15,14 @@
   font-display: swap; }
 
 @font-face {
+  font-family: "VWTextOffice";
+  src: url("../fonts/VWTextOffice-Bold.eot");
+  src: url("../fonts/VWTextOffice-Bold.eot?#iefix") format("embedded-opentype"), url("../fonts/VWTextOffice-Bold.woff2") format("woff2"), url("../fonts/VWTextOffice-Bold.woff") format("woff");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap; }
+
+@font-face {
   font-family: "VWHeadOffice";
   src: url("../fonts/VWHeadOffice-Regular.eot");
   src: url("../fonts/VWHeadOffice-Regular.eot?#iefix") format("embedded-opentype"), url("../fonts/VWHeadOffice-Regular.woff2") format("woff2"), url("../fonts/VWHeadOffice-Regular.woff") format("woff");
@@ -27,14 +35,6 @@
   src: url("../fonts/VWText-Light.eot");
   src: url("../fonts/VWText-Light.eot?#iefix") format("embedded-opentype"), url("../fonts/VWText-Light.woff2") format("woff2"), url("../fonts/VWText-Light.woff") format("woff");
   font-weight: 300;
-  font-style: normal;
-  font-display: swap; }
-
-@font-face {
-  font-family: "VWTextOffice";
-  src: url("../fonts/VWTextOffice-Bold.eot");
-  src: url("../fonts/VWTextOffice-Bold.eot?#iefix") format("embedded-opentype"), url("../fonts/VWTextOffice-Bold.woff2") format("woff2"), url("../fonts/VWTextOffice-Bold.woff") format("woff");
-  font-weight: 700;
   font-style: normal;
   font-display: swap; }
 
@@ -512,6 +512,31 @@ header.header-show {
     margin-right: 0; }
   .cars .btns .car-item:hover, .cars .btns .car-item.active {
     border-color: #001E50; }
+  .cars .btns .car-item ul {
+    margin: 0;
+    padding: 0;
+    list-style: none; }
+    .cars .btns .car-item ul li {
+      position: relative;
+      text-align: left;
+      font-size: 12px;
+      padding: 0 0 0 10px;
+      margin-bottom: 5px; }
+      .cars .btns .car-item ul li:last-child {
+        margin-bottom: 0; }
+      .cars .btns .car-item ul li::before {
+        content: '';
+        width: 5px;
+        height: 5px;
+        border-radius: 50%;
+        -webkit-border-radius: 50%;
+        -moz-border-radius: 50%;
+        -ms-border-radius: 50%;
+        -o-border-radius: 50%;
+        background: #001E50;
+        position: absolute;
+        top: 4px;
+        left: 0; }
 
 .cars .btns .car-item:nth-child(3n) {
   margin-right: 0; }
@@ -696,9 +721,31 @@ header.header-show {
   opacity: 1;
   width: 100%; }
 
-@media screen and (min-width: 992px) {
-  .btn-orange:hover {
-    background: #ec4824; } }
+.footer-disclamer {
+  margin-top: 38px;
+  margin-bottom: 35px; }
+
+.footer .footer-disclamer .container-big {
+  display: block;
+  border-top: 1px solid #F1F1F1;
+  padding: 38px 16px 19px 16px; }
+
+.footer-disclamer P {
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 130%;
+  color: #747474;
+  margin-bottom: 32px; }
+
+summary {
+  display: block;
+  outline: none !important;
+  cursor: pointer;
+  margin: 10px 0;
+  padding: 15px;
+  background: #e6e6e6;
+  color: #828282;
+  font-size: 14px; }
 
 /* 
     M O B I L E
@@ -781,6 +828,9 @@ header.header-show {
     margin-left: 0; } }
 
 @media screen and (max-width: 500px) {
+  .footer-disclamer P {
+    font-size: 12px;
+    margin-bottom: 25px; }
   .exs-item {
     width: 100%;
     text-align: left;
